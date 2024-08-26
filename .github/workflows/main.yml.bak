@@ -1,4 +1,4 @@
-name: Upload Website
+name: Upload Website 2
 
 on:
   push:
@@ -20,4 +20,4 @@ jobs:
         aws-region: us-east-1
 
     - name: Deploy static site to S3 bucket
-      run: aws s3 sync ./public/ s3://test.atiom.app --delete
+      run: aws s3 sync ./public/ s3://www-test.atiom.app --delete
