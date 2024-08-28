@@ -21,3 +21,12 @@ jobs:
 
     - name: Deploy static site to S3 bucket
       run: aws s3 sync ./public/ s3://www-test.atiom.app --delete
+
+    - name: Create bucket in S3
+      uses: aitorres/aws-s3-create-bucket@v1.2.0
+      with:
+        bucket-name: 'my-unique-name-for-my-bucket'
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: 'us-east-2'
+        acl: 'private'
